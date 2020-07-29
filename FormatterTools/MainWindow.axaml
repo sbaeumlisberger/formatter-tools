@@ -1,0 +1,44 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormatterTools;assembly=FormatterTools"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="FormatterTools.MainWindow"
+        Width="1000"
+        Height="600"
+        Title="FormatterTools">
+
+  <Panel>
+
+    <local:FormatterTextBox
+      Name="textBox"
+      Padding="8"
+      BorderThickness="0"
+      Watermark="Paste JSON or XML here"
+      AcceptsReturn="True">
+      <local:FormatterTextBox.ContextMenu>
+        <ContextMenu>
+          <MenuItem Header="Wrapping" Click="WrappingItem_Click">
+            <MenuItem.Icon>
+              <CheckBox
+                Name="textWrappingCheckbox"
+                BorderThickness="0"
+                IsHitTestVisible="False"/>
+            </MenuItem.Icon>
+          </MenuItem>
+        </ContextMenu>
+      </local:FormatterTextBox.ContextMenu>
+    </local:FormatterTextBox>
+
+    <Button
+      Margin="32"
+      Padding="4"
+      HorizontalAlignment="Right"
+      VerticalAlignment="Bottom"
+      Content="Format"
+      Click="FormatButton_Click"/>
+
+  </Panel>
+
+</Window>
